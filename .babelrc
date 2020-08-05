@@ -1,6 +1,9 @@
+// {
+//   "presets": [
+//       "es2015"
+//   ],
+//   "plugins": []
+// }
 {
-  "presets": [
-      "es2015"
-  ],
-  "plugins": []
+  "presets": ["@babel/preset-env"]
 }

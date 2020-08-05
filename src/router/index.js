@@ -9,10 +9,13 @@
 import Router from 'koa-router'
 import article from './article'
 import user from './user'
+import upload from './upload'
 const router = new Router()
-
-router.get('/',article.getArticle)
+import body  from 'koa-body'
+router.get('/',article.get_article)
+router.post('/add_artircle',article.add_artircle)
 router.post('/addUser',user.addUser)
+router.post('/upload',upload.upload)
 
 
 export default router

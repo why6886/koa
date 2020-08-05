@@ -9,9 +9,9 @@
 // 设置配置文件
 const config = {
   // 数据库配置
-    DATABASE: 'why_article_text',
+    DATABASE: 'blogdata',
     USERNAME: 'root',
-    PASSWORD: 'root',
+    PASSWORD: '123456',
     PORT: '3306',
     HOST: 'localhost'
 }

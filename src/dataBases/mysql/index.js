@@ -27,9 +27,8 @@ mysql
         primaryKey: true
       },
       title: Sequelize.STRING(80),
-      summary: Sequelize.STRING(300),
       content: Sequelize.TEXT,
-      createTime: Sequelize.DATE,
+      creat_time: Sequelize.STRING(30),
     }, 
     {
       freezeTableName:true ,

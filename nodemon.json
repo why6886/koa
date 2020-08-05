@@ -3,7 +3,8 @@
   "ignore": [
       ".git",
       ".svn",
-      "node_modules/**/node_modules"
+      "node_modules/**/node_modules",
+      "./src/public/upload"
   ],
   "verbose": true,
   "execMap": {
@@ -16,5 +17,5 @@
   "env": {
       "NODE_ENV": "development"
   },
-  "ext": "ejs js json"
+  "ext": "jpg img upload ejs js json"
 }

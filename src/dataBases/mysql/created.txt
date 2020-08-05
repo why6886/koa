@@ -1,0 +1,22 @@
+CREATE TABLE `blogdata`.`article` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `title` VARCHAR(80) NOT NULL,
+  `summary` VARCHAR(300) NOT NULL,
+  `content` TEXT NOT NULL,
+  `createTime` DATE NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE INDEX `id_UNIQUE` (`id` ASC) VISIBLE)
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8;
+
+CREATE TABLE `blogdata`.`user` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `userName` VARCHAR(45) NOT NULL,
+  `email` VARCHAR(45) NOT NULL,
+  `password` VARCHAR(45) NOT NULL,
+  `subscribeList` VARCHAR(45) NOT NULL,
+  `creat_time` VARCHAR(45) NOT NULL,
+  `gender` VARCHAR(10) NOT NULL,
+  PRIMARY KEY (`id`))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8;

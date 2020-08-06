@@ -11,10 +11,14 @@ import moment  from 'moment'
 import isOk from '../../utils/checkSuccess'
 export default {
   get_article:async function(ctx,next){
+    const info = {
+      page:Number(ctx.request.body.page),
+      size:Number(ctx.request.body.size)
+    }
+    console.log(info)
     let data = await article.findAll({
-      where:{
-        id:15
-      }
+      limit: info.size, // 每页多少条
+      offset: info.size*(info.page-1)
     })
     ctx.body = {
       code:200,

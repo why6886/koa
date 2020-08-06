@@ -27,6 +27,7 @@ mysql
         primaryKey: true
       },
       title: Sequelize.STRING(80),
+      describe: Sequelize.STRING(200),
       content: Sequelize.TEXT,
       creat_time: Sequelize.STRING(30),
     }, 

@@ -4,15 +4,13 @@ const formidable = require('formidable')
 import moment from 'moment'
 export default {
   upload: async function (ctx, next) {
-    let creat_time = {
-      creat_time: moment().format('YYYY-MM-DD HH:mm:ss'),
-    }
     // let result = ctx.request.files.file
+    console.log(ctx.request.files)
     const data = ctx.request.files.file;
     const imgPathName = data.path.split('\\').pop()
     ctx.body = {
       url: `http://localhost:3300/upload/${imgPathName}`,
-      creat_time:creat_time
+      creat_time:moment().format('YYYY-MM-DD HH:mm:ss')
     }
   },
 }

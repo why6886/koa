@@ -37,4 +37,17 @@ export default {
     let info = isOk(data)
     ctx.body = info
   },
+  get_detail:async function(ctx,next){
+    console.log(ctx.request.body.id)
+    let data = null
+    try {
+      data = await article.findOne({
+        where:{id:ctx.request.body.id}
+      })
+    } catch (error) {
+      
+    }
+    let info = isOk(data)
+    ctx.body = info
+  },
 }

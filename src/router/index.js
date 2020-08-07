@@ -15,6 +15,7 @@ import body  from 'koa-body'
 router.post('/get_article',article.get_article)
 router.post('/add_artircle',article.add_artircle)
 router.post('/addUser',user.addUser)
+router.post('/get_detail',article.get_detail)
 router.post('/upload',upload.upload)
 
 

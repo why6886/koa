@@ -27,9 +27,11 @@ mysql
         primaryKey: true
       },
       title: Sequelize.STRING(80),
-      describe: Sequelize.STRING(200),
       content: Sequelize.TEXT,
       creat_time: Sequelize.STRING(30),
+      class_type: Sequelize.STRING(10),
+      label: Sequelize.STRING(10),
+      cover_img: Sequelize.STRING(100)
     }, 
     {
       freezeTableName:true ,

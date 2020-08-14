@@ -15,6 +15,8 @@ import cors from 'koa2-cors'
 import router from './router'
 const path = require('path');
 const koaStatic = require('koa-static');
+const jwtAuth = require("koa-jwt");
+const serect = 'why';  //密钥，不能丢
 // 实例化koa
 const app = new Koa()
 app.use(logger())
@@ -23,6 +25,11 @@ app.use(koaStatic(path.join(__dirname,'public'),{
   gzip: true,
 	buffer: true,
 	dynamic: true
+}));
+app.use(jwtAuth({
+  secret: serect
+}).unless({
+   path: [/\/addUser/, /\/login/, /\/get_article/, /\/get_detail/]
 }));
 // app.use(body())
 app.use(body({

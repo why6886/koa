@@ -11,10 +11,10 @@ import article from './article'
 import user from './user'
 import upload from './upload'
 const router = new Router()
-import body  from 'koa-body'
 router.post('/get_article',article.get_article)
 router.post('/add_artircle',article.add_artircle)
 router.post('/addUser',user.addUser)
+router.post('/login',user.login)
 router.post('/get_detail',article.get_detail)
 router.post('/upload',upload.upload)
 

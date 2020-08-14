@@ -15,7 +15,7 @@ export default {
       page:Number(ctx.request.body.page),
       size:Number(ctx.request.body.size)
     }
-    console.log(info)
+    console.log(ctx.header, ctx.header.authentication)
     let data = await article.findAll({
       limit: info.size, // 每页多少条
       offset: info.size*(info.page-1)

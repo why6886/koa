@@ -26,6 +26,21 @@ export default {
     let info = isOk(data)
     ctx.body = info
   },
+  getUser:async function(ctx,next){
+    let data = null 
+    try {
+      data =  await user.findAll({
+        where: {
+          id: ctx.request.body.user_id
+        }
+      })
+    } catch (error) {
+      console.log(error)
+    }
+    console.log( ctx.request.body.user_id, data)
+    let info = isOk(data)
+    ctx.body = info
+  },
   login:async function(ctx,next){
     console.log(ctx.request.body)
     let data = null 

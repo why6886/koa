@@ -12,12 +12,13 @@ import user from './user'
 import upload from './upload'
 const router = new Router()
 router.post('/get_article',article.get_article)
+router.post('/get_all_article',article.get_all_article)
 router.post('/add_artircle',article.add_artircle)
 router.post('/addUser',user.addUser)
+router.post('/getUser',user.getUser)
 router.post('/login',user.login)
 router.post('/get_detail',article.get_detail)
 router.post('/upload',upload.upload)
-
 
 export default router
 

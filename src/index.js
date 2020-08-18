@@ -29,7 +29,7 @@ app.use(koaStatic(path.join(__dirname,'public'),{
 app.use(jwtAuth({
   secret: serect
 }).unless({
-   path: [/\/addUser/, /\/login/, /\/get_article/, /\/get_detail/]
+   path: [/\/addUser/, /\/login/, /\/get_article/, /\/get_detail/, /\/getUser/, /\/get_all_article/]
 }));
 // app.use(body())
 app.use(body({

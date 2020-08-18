@@ -10,15 +10,34 @@ import { article } from '../../dataBases/mysql'
 import moment  from 'moment'
 import isOk from '../../utils/checkSuccess'
 export default {
+  get_all_article:async function(ctx,next){
+    let data = null
+    try {
+      data = await article.findAll({
+        order: [
+          ['id', 'DESC']
+        ]
+      })
+    } catch (error) {
+      console.log(error)
+    } 
+    let info = isOk(data)
+    ctx.body = info
+  },
   get_article:async function(ctx,next){
     const info = {
       page:Number(ctx.request.body.page),
       size:Number(ctx.request.body.size)
     }
-    console.log(ctx.header, ctx.header.authentication)
     let data = await article.findAll({
+      where: {
+        user_id: ctx.request.body.user_id ? ctx.request.body.user_id : 0
+      },
       limit: info.size, // 每页多少条
-      offset: info.size*(info.page-1)
+      offset: info.size*(info.page-1),
+      order: [
+        ['id', 'DESC']
+      ]
     })
     ctx.body = {
       code:200,

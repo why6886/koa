@@ -26,12 +26,16 @@ mysql
         type: Sequelize.INTEGER,
         primaryKey: true
       },
+      user_id: Sequelize.BIGINT,
+      type: Sequelize.BIGINT,
       title: Sequelize.STRING(80),
       content: Sequelize.TEXT,
       creat_time: Sequelize.STRING(30),
       class_type: Sequelize.STRING(10),
       label: Sequelize.STRING(10),
-      cover_img: Sequelize.STRING(100)
+      cover_img: Sequelize.STRING(100),
+      privacy: Sequelize.BIGINT,
+      view_count: Sequelize.BIGINT,
     }, 
     {
       freezeTableName:true ,
